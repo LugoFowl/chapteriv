@@ -1,0 +1,30 @@
+[
+  {
+    "firstName": "Lugo",
+    "lastName": "Fowl",
+    "adress": "Av bernardi",
+    "emailAdress": "lugo@mail.com",
+    "radioGender": "m",
+    "checks": [
+      "Dormir"
+    ],
+    "selectCountries": "Bangladesh",
+    "selectYears": "1999",
+    "selectMonths": "Maio",
+    "pwd": "Teste123"
+  },
+  {
+    "firstName": "Lugo2",
+    "lastName": "Fowl2",
+    "adress": "Av bernardi2",
+    "emailAdress": "lugo2@mail.com",
+    "radioGender": "f",
+    "checks": [
+      "Netflix"
+    ],
+    "selectCountries": "Bangladesh",
+    "selectYears": "1999",
+    "selectMonths": "Maio",
+    "pwd": "Teste123"
+  }
+]
