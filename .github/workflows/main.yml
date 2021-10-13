@@ -28,14 +28,15 @@ jobs:
     - run: npm run cypress:run
     # vai seguir executando os testes caso encontre algum erro, pois iremos utilizar o relatório para isso
       continue-on-error: true
-    -run: npm run report:merge
+    - run: npm run report:merge
     
-    -run: npm run report:mocha
+    - run: npm run report:mocha
     
-# recurso do github para publicar o relatório em formato html chamado Github Pages
--name: Deploy to GitHub Pages
-uses: JamesIves/github-pages-deploy-action@4.1.5
-with:
-  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-  BRANCH: gh-pages
-  FOLDER: mochawesome-report
+    # recurso do github para publicar o relatório em formato html chamado Github Pages
+
+    - name: Deploy to GitHub Pages
+      uses: JamesIves/github-pages-deploy-action@4.1.5
+      with:
+       GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+       BRANCH: gh-pages
+       FOLDER: mochawesome-report
