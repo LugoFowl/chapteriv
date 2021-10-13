@@ -1,0 +1,126 @@
+{
+  "stats": {
+    "suites": 1,
+    "tests": 2,
+    "passes": 2,
+    "pending": 0,
+    "failures": 0,
+    "start": "2021-10-13T20:12:11.839Z",
+    "end": "2021-10-13T20:12:14.298Z",
+    "duration": 2459,
+    "testsRegistered": 2,
+    "passPercent": 100,
+    "pendingPercent": 0,
+    "other": 0,
+    "hasOther": false,
+    "skipped": 0,
+    "hasSkipped": false
+  },
+  "results": [
+    {
+      "uuid": "fbb6054c-818f-4e36-9ed4-123c9a1e4ff6",
+      "title": "",
+      "fullFile": "cypress/integration/listagem.spec.js",
+      "file": "cypress/integration/listagem.spec.js",
+      "beforeHooks": [],
+      "afterHooks": [],
+      "tests": [],
+      "suites": [
+        {
+          "uuid": "94a36e15-5fe7-498f-a023-2f625edd3a33",
+          "title": "Listagem",
+          "fullFile": "",
+          "file": "",
+          "beforeHooks": [],
+          "afterHooks": [],
+          "tests": [
+            {
+              "title": "Quando não houver cadastros, então a listagem deve estar vazia",
+              "fullTitle": "Listagem Quando não houver cadastros, então a listagem deve estar vazia",
+              "timedOut": null,
+              "duration": 419,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"listagem-vazia\").then(data => {\n  window.localStorage.setItem('data', JSON.stringify(data));\n});\ncy.visit('https://form-agilizei.netlify.app/listagem.html'); //deveria conter o tamanho/comprimento\ncy.get('table tbody tr').should('have.length', 0);",
+              "err": {},
+              "uuid": "8a4e7f75-06df-4ccd-8fe6-13fcd536ba03",
+              "parentUUID": "94a36e15-5fe7-498f-a023-2f625edd3a33",
+              "isHook": false,
+              "skipped": false
+            },
+            {
+              "title": "Quando houber um ou mais cadastros, então a listagem deve exibir cada registro",
+              "fullTitle": "Listagem Quando houber um ou mais cadastros, então a listagem deve exibir cada registro",
+              "timedOut": null,
+              "duration": 209,
+              "state": "passed",
+              "speed": "slow",
+              "pass": true,
+              "fail": false,
+              "pending": false,
+              "context": null,
+              "code": "cy.fixture(\"listagem-com-itens\").then(data => {\n  window.localStorage.setItem('data', JSON.stringify(data));\n});\ncy.visit('https://form-agilizei.netlify.app/listagem.html'); //deveria conter o tamanho/comprimento\ncy.get('table tbody tr').should('have.length', 2);",
+              "err": {},
+              "uuid": "d9e272ea-c1b2-4009-a2b1-29b88deaa8d1",
+              "parentUUID": "94a36e15-5fe7-498f-a023-2f625edd3a33",
+              "isHook": false,
+              "skipped": false
+            }
+          ],
+          "suites": [],
+          "passes": [
+            "8a4e7f75-06df-4ccd-8fe6-13fcd536ba03",
+            "d9e272ea-c1b2-4009-a2b1-29b88deaa8d1"
+          ],
+          "failures": [],
+          "pending": [],
+          "skipped": [],
+          "duration": 628,
+          "root": false,
+          "rootEmpty": false,
+          "_timeout": 2000
+        }
+      ],
+      "passes": [],
+      "failures": [],
+      "pending": [],
+      "skipped": [],
+      "duration": 0,
+      "root": true,
+      "rootEmpty": true,
+      "_timeout": 2000
+    }
+  ],
+  "meta": {
+    "mocha": {
+      "version": "7.0.1"
+    },
+    "mochawesome": {
+      "options": {
+        "quiet": true,
+        "reportFilename": "mochawesome",
+        "saveHtml": false,
+        "saveJson": true,
+        "consoleReporter": "spec",
+        "useInlineDiffs": false,
+        "code": true
+      },
+      "version": "6.3.1"
+    },
+    "marge": {
+      "options": {
+        "id": "default",
+        "reporterDir": "mochawesome-report",
+        "quiet": true,
+        "overwrite": false,
+        "html": false,
+        "json": true
+      },
+      "version": "5.2.0"
+    }
+  }
+}
