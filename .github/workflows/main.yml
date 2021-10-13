@@ -1,0 +1,41 @@
+name: Testes
+#Gatilhos - é o que vai disparar a execução do meu teste
+  #Programados por tempo
+  #Acionados por eventos
+on:
+  push:
+    branches: [ main ]
+
+jobs:
+  build:
+# Máquina ou ambiente que o teste será executado
+    runs-on: ubuntu-latest
+
+# Passos pra pegar a máquina/ambiente para executar os testes (considere que a máquina/ambiente não tem nada instalado
+    steps:
+    # Donwload do código
+    - uses: actions/checkout@v2
+    
+    # Setup da versão do node
+    - name: Use Node.js ${{ matrix.node-version }}
+      uses: actions/setup-node@v2
+      with:
+        node-version: ${{ matrix.node-version }}
+        cache: 'npm'
+    
+    # o npm install irá olhar para o package.json do projeto e baixar tudo que está em "devDependencies":{}   
+    - run: npm install
+    - run: npm run cypress:run
+    # vai seguir executando os testes caso encontre algum erro, pois iremos utilizar o relatório para isso
+      continue-on-error: true
+    -run: npm run report:merge
+    
+    -run: npm run report:mocha
+    
+# recurso do github para publicar o relatório em formato html chamado Github Pages
+-name: Deploy to GitHub Pages
+uses: JamesIves/github-pages-deploy-action@4.1.5
+  with:
+    GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+    BRANCH: gh-pages
+    FOLDER: mochawesome-report
