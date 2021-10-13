@@ -5,9 +5,9 @@
     "passes": 1,
     "pending": 0,
     "failures": 0,
-    "start": "2021-10-13T20:12:42.885Z",
-    "end": "2021-10-13T20:12:48.260Z",
-    "duration": 5375,
+    "start": "2021-10-13T20:12:50.065Z",
+    "end": "2021-10-13T20:12:55.072Z",
+    "duration": 5007,
     "testsRegistered": 1,
     "passPercent": 100,
     "pendingPercent": 0,
@@ -18,7 +18,7 @@
   },
   "results": [
     {
-      "uuid": "48b2ae38-bf79-456d-812e-51656f4936e3",
+      "uuid": "d0a541d9-146d-4bbb-a036-73b00e91147f",
       "title": "",
       "fullFile": "cypress/integration/cadastro.spec.js",
       "file": "cypress/integration/cadastro.spec.js",
@@ -27,7 +27,7 @@
       "tests": [],
       "suites": [
         {
-          "uuid": "68a832f4-21a5-475f-a78c-4df649b65f45",
+          "uuid": "f07aff1e-5e09-4099-a58a-59fbe08be046",
           "title": "Cadastro",
           "fullFile": "",
           "file": "",
@@ -38,7 +38,7 @@
               "title": "Quando eu informar os dados e finalizar, então o cadastro deve ser efetuado",
               "fullTitle": "Cadastro Quando eu informar os dados e finalizar, então o cadastro deve ser efetuado",
               "timedOut": null,
-              "duration": 3682,
+              "duration": 3493,
               "state": "passed",
               "speed": "slow",
               "pass": true,
@@ -47,20 +47,20 @@
               "context": null,
               "code": "cy.visit('https://form-agilizei.netlify.app/');\ncy.get('input[name=firstName]').type(chance.first());\ncy.get('input[name=lastName]').type(chance.last());\ncy.get('textarea[name=adress]').type(chance.address());\ncy.get('input[name=emailAdress').type(chance.email());\ncy.get('input[value=n]').check();\ncy.get('input[type=checkbox]').check('Netflix');\ncy.get('input[type=checkbox]').check('Dormir');\ncy.get('select#countries').select('Dinamarca', {\n  force: true\n});\ncy.get('select#years').select('1987', {\n  force: true\n});\ncy.get('select#months').select('Agosto', {\n  force: true\n});\ncy.get('select#days').select('7', {\n  force: true\n});\ncy.get('input#firstpassword').type('Teste123');\ncy.get('input#secondpassword').type('Teste123');\ncy.get('button#submitbtn').click(); //eu espero que minha aplicação seja direcionada para a listagem\n//url\n//deveria conter listagem\n//should contain listagem\ncy.url().should('contain', 'listagem'); //obtém a url da página que está ativa, neste caso, ao dar o click no button submit\n//a aplicação redireciona automaticamente para a página de listagem, dai este \n//comando irá validar se o redirecionamento ocorreu certinho",
               "err": {},
-              "uuid": "66d2650a-67cb-4586-b886-eb141c830b02",
-              "parentUUID": "68a832f4-21a5-475f-a78c-4df649b65f45",
+              "uuid": "d1a785a3-9774-47ba-a421-15e691b6dc4e",
+              "parentUUID": "f07aff1e-5e09-4099-a58a-59fbe08be046",
               "isHook": false,
               "skipped": false
             }
           ],
           "suites": [],
           "passes": [
-            "66d2650a-67cb-4586-b886-eb141c830b02"
+            "d1a785a3-9774-47ba-a421-15e691b6dc4e"
           ],
           "failures": [],
           "pending": [],
           "skipped": [],
-          "duration": 3682,
+          "duration": 3493,
           "root": false,
           "rootEmpty": false,
           "_timeout": 2000
